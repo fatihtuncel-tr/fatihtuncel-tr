@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 230" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="topBar1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <style>
+      .repo-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 19px; font-weight: 700; fill: #38BDF8; }
+      .badge-txt { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 600; fill: #38BDF8; }
+      .desc-en { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #E2E8F0; font-weight: 500; }
+      .desc-tr { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; fill: #94A3B8; }
+      .tag { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11.5px; fill: #CBD5E1; }
+    </style>
+  </defs>
+
+  <rect width="580" height="230" rx="14" fill="url(#bg1)" stroke="#1E293B" stroke-width="2"/>
+  <rect x="0" y="0" width="580" height="4" rx="2" fill="url(#topBar1)"/>
+
+  <!-- Repo Icon + Name -->
+  <g transform="translate(26, 28)">
+    <text x="0" y="18" class="repo-title">🩺 design-project</text>
+    <rect x="415" y="1" width="112" height="24" rx="12" fill="#0284C7" fill-opacity="0.2" stroke="#38BDF8" stroke-width="1"/>
+    <text x="430" y="17" class="badge-txt">AUROC 0.9256</text>
+  </g>
+
+  <!-- Descriptions -->
+  <text x="26" y="76" class="desc-en">Uncertainty Calibration &amp; Age-Group Fairness in Reduced-Lead</text>
+  <text x="26" y="95" class="desc-en">ECG Classification (PTB-XL • xResNet1d-101 • MC Dropout • ECE)</text>
+
+  <text x="26" y="122" class="desc-tr">Derivasyon Sayısı Azaltılmış EKG Sınıflandırmasında Belirsizlik</text>
+  <text x="26" y="140" class="desc-tr">Kalibrasyonu ve Yaş Grubu Adaleti (12/6/2/1 Derivasyon Analizi)</text>
+
+  <!-- Footer Tech Tags -->
+  <g transform="translate(26, 178)">
+    <circle cx="7" cy="7" r="6" fill="#3572A5"/>
+    <text x="20" y="11" class="tag">Python • PyTorch • WFDB • SciPy • Bootstrap 95% CI</text>
+  </g>
+</svg>
