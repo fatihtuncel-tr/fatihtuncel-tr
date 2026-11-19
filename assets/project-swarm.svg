@@ -1,42 +1,137 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 230" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 212" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#130D26"/>
+    <linearGradient id="bgSwarm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#110D22"/>
       <stop offset="100%" stop-color="#0F172A"/>
     </linearGradient>
-    <linearGradient id="topBar2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#C084FC"/>
+
+    <linearGradient id="topBarSwarm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#C084FC" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <animate attributeName="x1" values="-80%;100%" dur="5s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="20%;200%" dur="5s" begin="1s" repeatCount="indefinite"/>
     </linearGradient>
+
+    <filter id="glowSwarm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="clipSwarm">
+      <rect width="580" height="212" rx="14"/>
+    </clipPath>
+
     <style>
-      .repo-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 19px; font-weight: 700; fill: #C084FC; }
-      .badge-txt { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 600; fill: #C084FC; }
-      .desc-en { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #E2E8F0; font-weight: 500; }
-      .desc-tr { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; fill: #94A3B8; }
-      .tag { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11.5px; fill: #CBD5E1; }
+      .repo-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 18.5px;
+        font-weight: 700;
+        fill: #F8FAFC;
+        letter-spacing: -0.2px;
+      }
+      .badge-txt {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #C084FC;
+      }
+      .desc {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13.5px;
+        fill: #CBD5E1;
+        font-weight: 400;
+      }
+      .meta {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11.5px;
+        fill: #64748B;
+      }
+      .lang {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11.5px;
+        fill: #94A3B8;
+      }
     </style>
   </defs>
 
-  <rect width="580" height="230" rx="14" fill="url(#bg2)" stroke="#1E293B" stroke-width="2"/>
-  <rect x="0" y="0" width="580" height="4" rx="2" fill="url(#topBar2)"/>
+  <g clip-path="url(#clipSwarm)">
+    <rect width="580" height="212" fill="url(#bgSwarm)"/>
+    <rect x="0" y="0" width="580" height="3" fill="#1E293B"/>
+    <rect x="0" y="0" width="580" height="3" fill="url(#topBarSwarm)"/>
 
-  <!-- Repo Icon + Name -->
-  <g transform="translate(26, 28)">
-    <text x="0" y="18" class="repo-title">⚡ swarm-1000-code-perfectizer</text>
-    <rect x="415" y="1" width="112" height="24" rx="12" fill="#7E22CE" fill-opacity="0.25" stroke="#C084FC" stroke-width="1"/>
-    <text x="427" y="17" class="badge-txt">1,000 AGENTS</text>
+    <!-- Header -->
+    <g transform="translate(26, 26)">
+      <!-- Vector Neural Nodes Icon -->
+      <rect x="0" y="0" width="28" height="28" rx="8" fill="#7E22CE" fill-opacity="0.2" stroke="#C084FC" stroke-opacity="0.4" stroke-width="1"/>
+      <line x1="8" y1="10" x2="14" y2="14" stroke="#C084FC" stroke-width="1.3"/>
+      <line x1="20" y1="9" x2="14" y2="14" stroke="#C084FC" stroke-width="1.3"/>
+      <line x1="14" y1="14" x2="10" y2="20" stroke="#818CF8" stroke-width="1.3"/>
+      <line x1="14" y1="14" x2="20" y2="19" stroke="#818CF8" stroke-width="1.3"/>
+      <circle cx="8" cy="10" r="2" fill="#C084FC"/>
+      <circle cx="20" cy="9" r="2" fill="#818CF8"/>
+      <circle cx="14" cy="14" r="2.5" fill="#E9D5FF"/>
+      <circle cx="10" cy="20" r="2" fill="#818CF8"/>
+      <circle cx="20" cy="19" r="2" fill="#C084FC"/>
+
+      <text x="38" y="20" class="repo-title">swarm-1000-code-perfectizer</text>
+
+      <!-- Metric Pill -->
+      <rect x="400" y="2" width="128" height="24" rx="12" fill="#7E22CE" fill-opacity="0.18" stroke="#C084FC" stroke-opacity="0.45" stroke-width="1"/>
+      <circle cx="414" cy="14" r="3" fill="#C084FC">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.2s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="424" y="18" class="badge-txt">1,000 AGENTS</text>
+    </g>
+
+    <!-- Concise Description -->
+    <text x="26" y="84" class="desc">Multi-agent autonomous code auditing, self-healing debugging</text>
+    <text x="26" y="105" class="desc">&amp; refactoring platform with live HTML5 neural mesh UI.</text>
+
+    <!-- Key Highlights Line -->
+    <text x="26" y="134" class="meta">Cross-Audit · Security Scan · Auto-Patch · Neural Canvas</text>
+
+    <!-- Divider -->
+    <line x1="26" y1="154" x2="554" y2="154" stroke="#1E293B" stroke-width="1"/>
+
+    <!-- Footer Left: Stack -->
+    <g transform="translate(26, 174)">
+      <circle cx="6" cy="7" r="5" fill="#F1E05A"/>
+      <text x="18" y="11" class="lang">JavaScript · Python · Multi-Agent AI</text>
+    </g>
+
+    <!-- Footer Right: Live Mini Swarm Mesh Animation -->
+    <g>
+      <line x1="422" y1="176" x2="464" y2="168" stroke="#818CF8" stroke-width="1" stroke-opacity="0.45"/>
+      <line x1="464" y1="168" x2="508" y2="179" stroke="#C084FC" stroke-width="1" stroke-opacity="0.45"/>
+      <line x1="464" y1="168" x2="544" y2="167" stroke="#818CF8" stroke-width="1" stroke-opacity="0.35"/>
+      <line x1="422" y1="176" x2="462" y2="192" stroke="#C084FC" stroke-width="1" stroke-opacity="0.4"/>
+      <line x1="462" y1="192" x2="508" y2="179" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.45"/>
+      <line x1="508" y1="179" x2="544" y2="167" stroke="#C084FC" stroke-width="1" stroke-opacity="0.45"/>
+
+      <!-- Orbiting Signal Packets -->
+      <circle r="2.3" fill="#C084FC" filter="url(#glowSwarm)">
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M 422 176 L 464 168 L 508 179 L 544 167"/>
+      </circle>
+      <circle r="2" fill="#38BDF8" filter="url(#glowSwarm)">
+        <animateMotion dur="3.2s" begin="0.9s" repeatCount="indefinite" path="M 544 167 L 508 179 L 462 192 L 422 176"/>
+      </circle>
+
+      <!-- Mini Nodes -->
+      <circle cx="422" cy="176" r="3" fill="#818CF8"/>
+      <circle cx="464" cy="168" r="3.6" fill="#C084FC">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="462" cy="192" r="2.8" fill="#38BDF8"/>
+      <circle cx="508" cy="179" r="3.4" fill="#C084FC">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="544" cy="167" r="3" fill="#818CF8"/>
+    </g>
   </g>
 
-  <!-- Descriptions -->
-  <text x="26" y="76" class="desc-en">1,000 AI-Agent Swarm Cross-Code Auditor, Autonomous Error</text>
-  <text x="26" y="95" class="desc-en">Debugger &amp; Self-Healing Refactoring Engine with Neural Canvas</text>
-
-  <text x="26" y="122" class="desc-tr">1.000 Yapay Zeka Ajanlı Çapraz Kod Denetleyici, Otonom Hata</text>
-  <text x="26" y="140" class="desc-tr">Ayıklama, Yeniden Yapılandırma ve Canlı Sinir Ağı Görselleştirme</text>
-
-  <!-- Footer Tech Tags -->
-  <g transform="translate(26, 178)">
-    <circle cx="7" cy="7" r="6" fill="#F1E05A"/>
-    <text x="20" y="11" class="tag">Python • JavaScript • Multi-Agent LLM • HTML5 Canvas</text>
-  </g>
+  <rect x="0.75" y="0.75" width="578.5" height="210.5" rx="14" fill="none" stroke="#1E293B" stroke-width="1.5"/>
 </svg>

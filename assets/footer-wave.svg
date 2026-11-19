@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 72" width="100%" height="100%">
+  <defs>
+    <linearGradient id="edgeMaskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="12%" stop-color="#FFFFFF"/>
+      <stop offset="88%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <mask id="edgeFade">
+      <rect width="1200" height="72" fill="url(#edgeMaskGrad)"/>
+    </mask>
+
+    <linearGradient id="waveFill1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <linearGradient id="waveFill2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C084FC" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <clipPath id="footerClip">
+      <rect width="1200" height="72"/>
+    </clipPath>
+
+    <style>
+      .wave-slow {
+        animation: driftLeft 12s linear infinite;
+      }
+      .wave-fast {
+        animation: driftRight 9s linear infinite;
+      }
+      @keyframes driftLeft {
+        0% { transform: translateX(0px); }
+        100% { transform: translateX(-600px); }
+      }
+      @keyframes driftRight {
+        0% { transform: translateX(-600px); }
+        100% { transform: translateX(0px); }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#footerClip)" mask="url(#edgeFade)">
+    <!-- Back Wave (Exact 600px Period) -->
+    <g class="wave-slow">
+      <path d="M 0 34 Q 150 14, 300 34 T 600 34 T 900 34 T 1200 34 T 1500 34 T 1800 34 L 1800 72 L 0 72 Z" fill="url(#waveFill2)"/>
+      <path d="M 0 34 Q 150 14, 300 34 T 600 34 T 900 34 T 1200 34 T 1500 34 T 1800 34" fill="none" stroke="#818CF8" stroke-opacity="0.55" stroke-width="1.5"/>
+    </g>
+
+    <!-- Front Wave (Exact 600px Period) -->
+    <g class="wave-fast">
+      <path d="M 0 42 Q 150 22, 300 42 T 600 42 T 900 42 T 1200 42 T 1500 42 T 1800 42 L 1800 72 L 0 72 Z" fill="url(#waveFill1)"/>
+      <path d="M 0 42 Q 150 22, 300 42 T 600 42 T 900 42 T 1200 42 T 1500 42 T 1800 42" fill="none" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1.8"/>
+    </g>
+  </g>
+</svg>

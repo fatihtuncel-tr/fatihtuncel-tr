@@ -1,42 +1,124 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 230" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 212" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B132B"/>
+    <linearGradient id="bgEcg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1224"/>
       <stop offset="100%" stop-color="#0F172A"/>
     </linearGradient>
-    <linearGradient id="topBar1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#818CF8"/>
+
+    <linearGradient id="topBarEcg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.25"/>
+      <animate attributeName="x1" values="-80%;100%" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="20%;200%" dur="5s" repeatCount="indefinite"/>
     </linearGradient>
+
+    <filter id="glowEcg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="clipEcg">
+      <rect width="580" height="212" rx="14"/>
+    </clipPath>
+
     <style>
-      .repo-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 19px; font-weight: 700; fill: #38BDF8; }
-      .badge-txt { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 600; fill: #38BDF8; }
-      .desc-en { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; fill: #E2E8F0; font-weight: 500; }
-      .desc-tr { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; fill: #94A3B8; }
-      .tag { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11.5px; fill: #CBD5E1; }
+      .repo-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        fill: #F8FAFC;
+        letter-spacing: -0.2px;
+      }
+      .badge-txt {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #38BDF8;
+      }
+      .desc {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13.5px;
+        fill: #CBD5E1;
+        font-weight: 400;
+      }
+      .meta {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11.5px;
+        fill: #64748B;
+      }
+      .lang {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11.5px;
+        fill: #94A3B8;
+      }
+      .mini-ecg {
+        fill: none;
+        stroke: #38BDF8;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 240;
+        stroke-dashoffset: 240;
+        animation: miniDraw 3.4s linear infinite;
+      }
+      @keyframes miniDraw {
+        0% { stroke-dashoffset: 240; opacity: 0.35; }
+        75% { stroke-dashoffset: 0; opacity: 0.95; }
+        100% { stroke-dashoffset: -240; opacity: 0.2; }
+      }
     </style>
   </defs>
 
-  <rect width="580" height="230" rx="14" fill="url(#bg1)" stroke="#1E293B" stroke-width="2"/>
-  <rect x="0" y="0" width="580" height="4" rx="2" fill="url(#topBar1)"/>
+  <g clip-path="url(#clipEcg)">
+    <rect width="580" height="212" fill="url(#bgEcg)"/>
+    <rect x="0" y="0" width="580" height="3" fill="#1E293B"/>
+    <rect x="0" y="0" width="580" height="3" fill="url(#topBarEcg)"/>
 
-  <!-- Repo Icon + Name -->
-  <g transform="translate(26, 28)">
-    <text x="0" y="18" class="repo-title">🩺 design-project</text>
-    <rect x="415" y="1" width="112" height="24" rx="12" fill="#0284C7" fill-opacity="0.2" stroke="#38BDF8" stroke-width="1"/>
-    <text x="430" y="17" class="badge-txt">AUROC 0.9256</text>
+    <!-- Header -->
+    <g transform="translate(26, 26)">
+      <!-- Vector Heart-Pulse Icon -->
+      <rect x="0" y="0" width="28" height="28" rx="8" fill="#0284C7" fill-opacity="0.18" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1"/>
+      <path d="M 5 14 L 9.5 14 L 11.8 8 L 15.2 20 L 17.8 12 L 19.5 14 L 23 14" fill="none" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="38" y="20" class="repo-title">design-project</text>
+
+      <!-- Metric Pill -->
+      <rect x="400" y="2" width="128" height="24" rx="12" fill="#0284C7" fill-opacity="0.16" stroke="#38BDF8" stroke-opacity="0.45" stroke-width="1"/>
+      <circle cx="414" cy="14" r="3" fill="#38BDF8">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="424" y="18" class="badge-txt">AUROC 0.9256</text>
+    </g>
+
+    <!-- Concise Description -->
+    <text x="26" y="84" class="desc">Uncertainty calibration &amp; age-group fairness in reduced-lead</text>
+    <text x="26" y="105" class="desc">ECG classification on PTB-XL (12 → 6 → 2 → 1 leads).</text>
+
+    <!-- Key Highlights Line -->
+    <text x="26" y="134" class="meta">xResNet1d-101 · MC Dropout · ECE &amp; Brier · Bootstrap 95% CI</text>
+
+    <!-- Divider -->
+    <line x1="26" y1="154" x2="554" y2="154" stroke="#1E293B" stroke-width="1"/>
+
+    <!-- Footer Left: Stack -->
+    <g transform="translate(26, 174)">
+      <circle cx="6" cy="7" r="5" fill="#3572A5"/>
+      <text x="18" y="11" class="lang">Python · PyTorch · WFDB · SciPy</text>
+    </g>
+
+    <!-- Footer Right: Live Mini ECG Animation -->
+    <g>
+      <line x1="386" y1="180" x2="554" y2="180" stroke="#1E293B" stroke-width="1"/>
+      <path class="mini-ecg" d="M 386 180 L 424 180 L 432 174 L 438 180 L 448 180 L 453 186 L 461 160 L 468 192 L 475 174 L 483 180 L 554 180"/>
+      <circle r="2.6" fill="#38BDF8" filter="url(#glowEcg)">
+        <animateMotion dur="3.4s" repeatCount="indefinite" path="M 386 180 L 424 180 L 432 174 L 438 180 L 448 180 L 453 186 L 461 160 L 468 192 L 475 174 L 483 180 L 554 180"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.85;1" dur="3.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
   </g>
 
-  <!-- Descriptions -->
-  <text x="26" y="76" class="desc-en">Uncertainty Calibration &amp; Age-Group Fairness in Reduced-Lead</text>
-  <text x="26" y="95" class="desc-en">ECG Classification (PTB-XL • xResNet1d-101 • MC Dropout • ECE)</text>
-
-  <text x="26" y="122" class="desc-tr">Derivasyon Sayısı Azaltılmış EKG Sınıflandırmasında Belirsizlik</text>
-  <text x="26" y="140" class="desc-tr">Kalibrasyonu ve Yaş Grubu Adaleti (12/6/2/1 Derivasyon Analizi)</text>
-
-  <!-- Footer Tech Tags -->
-  <g transform="translate(26, 178)">
-    <circle cx="7" cy="7" r="6" fill="#3572A5"/>
-    <text x="20" y="11" class="tag">Python • PyTorch • WFDB • SciPy • Bootstrap 95% CI</text>
-  </g>
+  <rect x="0.75" y="0.75" width="578.5" height="210.5" rx="14" fill="none" stroke="#1E293B" stroke-width="1.5"/>
 </svg>
