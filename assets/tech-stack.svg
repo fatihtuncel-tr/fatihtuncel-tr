@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stackBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080E1C"/>
+      <stop offset="100%" stop-color="#0D1526"/>
+    </linearGradient>
+
+    <linearGradient id="stackSweep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#C084FC" stop-opacity="0.1"/>
+      <animate attributeName="x1" values="-100%;100%" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;200%" dur="7s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <clipPath id="stackClip">
+      <rect width="1200" height="180" rx="16"/>
+    </clipPath>
+
+    <style>
+      .eyebrow {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #38BDF8;
+        letter-spacing: 1.8px;
+      }
+      .eyebrow-r {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 10.5px;
+        fill: #475569;
+        letter-spacing: 1.4px;
+      }
+      .t-name {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        fill: #F1F5F9;
+      }
+      .t-role {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 10px;
+        fill: #64748B;
+      }
+      .t-code {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11px;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#stackClip)">
+    <rect width="1200" height="180" fill="url(#stackBg)"/>
+    <rect x="0" y="0" width="1200" height="2.5" fill="#1E293B"/>
+    <rect x="0" y="0" width="1200" height="2.5" fill="url(#stackSweep)"/>
+
+    <!-- Header -->
+    <text x="30" y="32" class="eyebrow">04 // CORE TECH STACK</text>
+    <text x="1170" y="32" text-anchor="end" class="eyebrow-r">AI · SCIENTIFIC DSP · SYSTEMS</text>
+
+    <!-- ROW 1: AI & Scientific -->
+    <!-- 1. PyTorch -->
+    <g transform="translate(30, 50)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#EE4C2C" fill-opacity="0.16" stroke="#EE4C2C" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#FF785A">PT</text>
+      <text x="50" y="23" class="t-name">PyTorch</text>
+      <text x="50" y="38" class="t-role">Deep Learning</text>
+    </g>
+
+    <!-- 2. Python -->
+    <g transform="translate(261, 50)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#3776AB" fill-opacity="0.2" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#38BDF8">PY</text>
+      <text x="50" y="23" class="t-name">Python 3.9+</text>
+      <text x="50" y="38" class="t-role">Core Language</text>
+    </g>
+
+    <!-- 3. Scikit-Learn -->
+    <g transform="translate(492, 50)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#F7931E" fill-opacity="0.16" stroke="#F7931E" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#FBBF24">SK</text>
+      <text x="50" y="23" class="t-name">Scikit-Learn</text>
+      <text x="50" y="38" class="t-role">ML &amp; Calibration</text>
+    </g>
+
+    <!-- 4. NumPy & SciPy -->
+    <g transform="translate(723, 50)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#0EA5E9" fill-opacity="0.16" stroke="#38BDF8" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#7DD3FC">SP</text>
+      <text x="50" y="23" class="t-name">NumPy &amp; SciPy</text>
+      <text x="50" y="38" class="t-role">DSP &amp; Statistics</text>
+    </g>
+
+    <!-- 5. WFDB / PTB-XL -->
+    <g transform="translate(954, 50)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#10B981" fill-opacity="0.16" stroke="#34D399" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#34D399">EC</text>
+      <text x="50" y="23" class="t-name">WFDB / PTB-XL</text>
+      <text x="50" y="38" class="t-role">Clinical Signals</text>
+    </g>
+
+    <!-- ROW 2: Systems & Web -->
+    <!-- 6. JavaScript -->
+    <g transform="translate(30, 110)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#F7DF1E" fill-opacity="0.15" stroke="#FACC15" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#FDE047">JS</text>
+      <text x="50" y="23" class="t-name">JavaScript</text>
+      <text x="50" y="38" class="t-role">ES6+ · Swarm UI</text>
+    </g>
+
+    <!-- 7. HTML5 Canvas -->
+    <g transform="translate(261, 110)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#E34F26" fill-opacity="0.16" stroke="#FB923C" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#FB923C">H5</text>
+      <text x="50" y="23" class="t-name">HTML5 Canvas</text>
+      <text x="50" y="38" class="t-role">Neural Mesh Viz</text>
+    </g>
+
+    <!-- 8. CSS3 -->
+    <g transform="translate(492, 110)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#3B82F6" fill-opacity="0.16" stroke="#60A5FA" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#60A5FA">CS</text>
+      <text x="50" y="23" class="t-name">CSS3</text>
+      <text x="50" y="38" class="t-role">Interface Design</text>
+    </g>
+
+    <!-- 9. Git & Actions -->
+    <g transform="translate(723, 110)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#F05032" fill-opacity="0.16" stroke="#F87171" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#F87171">CI</text>
+      <text x="50" y="23" class="t-name">Git &amp; Actions</text>
+      <text x="50" y="38" class="t-role">Reproducible ML</text>
+    </g>
+
+    <!-- 10. Linux & VS Code -->
+    <g transform="translate(954, 110)">
+      <rect width="216" height="48" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+      <rect x="11" y="10" width="28" height="28" rx="7" fill="#A855F7" fill-opacity="0.16" stroke="#C084FC" stroke-opacity="0.45"/>
+      <text x="25" y="28" text-anchor="middle" class="t-code" fill="#C084FC">SH</text>
+      <text x="50" y="23" class="t-name">Linux &amp; VS Code</text>
+      <text x="50" y="38" class="t-role">Dev Environment</text>
+    </g>
+  </g>
+
+  <rect x="0.75" y="0.75" width="1198.5" height="178.5" rx="16" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 226" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aboutTrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080E1C"/>
+      <stop offset="100%" stop-color="#0D1526"/>
+    </linearGradient>
+
+    <clipPath id="aboutTrClip">
+      <rect width="1200" height="226" rx="16"/>
+    </clipPath>
+
+    <style>
+      .eyebrow {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #38BDF8;
+        letter-spacing: 1.8px;
+      }
+      .lead {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 14.5px;
+        font-weight: 500;
+        fill: #E2E8F0;
+      }
+      .pillar {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        fill: #F8FAFC;
+      }
+      .detail {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        fill: #94A3B8;
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#aboutTrClip)">
+    <rect width="1200" height="226" fill="url(#aboutTrBg)"/>
+    <rect x="0" y="0" width="1200" height="2" fill="#1E293B"/>
+
+    <text x="32" y="34" class="eyebrow">01 // HAKKIMDA (TÜRKÇE ÖZET)</text>
+    <text x="32" y="64" class="lead">Bilgisayar ve Yazılım Mühendisliği alanında çalışan, güvenilir klinik modeller ve çoklu ajan sistemleri geliştiren bir YZ araştırmacısıyım.</text>
+
+    <g transform="translate(32, 84)">
+      <rect width="1136" height="36" rx="9" fill="#0F172A" fill-opacity="0.82" stroke="#1E293B" stroke-width="1"/>
+      <circle cx="18" cy="18" r="3.6" fill="#38BDF8"/>
+      <text x="34" y="22.5" class="pillar">Biyomedikal YZ &amp; Sinyal</text>
+      <text x="234" y="22.5" class="detail">PTB-XL veri setinde derivasyon sayısı azaltılmış EKG sınıflandırması için 1B derin ağ mimarileri (xResNet1d-101, SimpleCNN1D).</text>
+    </g>
+
+    <g transform="translate(32, 128)">
+      <rect width="1136" height="36" rx="9" fill="#0F172A" fill-opacity="0.82" stroke="#1E293B" stroke-width="1"/>
+      <circle cx="18" cy="18" r="3.6" fill="#818CF8"/>
+      <text x="34" y="22.5" class="pillar">Güvenilir YZ &amp; Adalet</text>
+      <text x="234" y="22.5" class="detail">ECE, Brier Skoru ve MC Dropout ile belirsizlik kalibrasyonu; yaş grupları arası algoritmik adalet doğrulaması (ΔECE).</text>
+    </g>
+
+    <g transform="translate(32, 172)">
+      <rect width="1136" height="36" rx="9" fill="#0F172A" fill-opacity="0.82" stroke="#1E293B" stroke-width="1"/>
+      <circle cx="18" cy="18" r="3.6" fill="#C084FC"/>
+      <text x="34" y="22.5" class="pillar">Çoklu Ajan Sistemleri</text>
+      <text x="234" y="22.5" class="detail">Çapraz kod denetimi, otonom hata ayıklama ve gerçek zamanlı sinir ağı görselleştirmesi için SWARM-1000 mimarisi.</text>
+    </g>
+  </g>
+
+  <rect x="0.75" y="0.75" width="1198.5" height="224.5" rx="16" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+</svg>

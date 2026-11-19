@@ -1,37 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 72" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 94" width="100%" height="100%">
   <defs>
+    <linearGradient id="footerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C18"/>
+      <stop offset="100%" stop-color="#0B1120"/>
+    </linearGradient>
+
     <linearGradient id="edgeMaskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#000000"/>
-      <stop offset="12%" stop-color="#FFFFFF"/>
-      <stop offset="88%" stop-color="#FFFFFF"/>
+      <stop offset="10%" stop-color="#FFFFFF"/>
+      <stop offset="90%" stop-color="#FFFFFF"/>
       <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
     <mask id="edgeFade">
-      <rect width="1200" height="72" fill="url(#edgeMaskGrad)"/>
+      <rect width="1200" height="94" fill="url(#edgeMaskGrad)"/>
     </mask>
 
     <linearGradient id="waveFill1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
       <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0"/>
     </linearGradient>
 
     <linearGradient id="waveFill2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.18"/>
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#C084FC" stop-opacity="0.0"/>
     </linearGradient>
 
     <clipPath id="footerClip">
-      <rect width="1200" height="72"/>
+      <rect width="1200" height="94" rx="16"/>
     </clipPath>
 
     <style>
-      .wave-slow {
-        animation: driftLeft 12s linear infinite;
+      .sig {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11.5px;
+        fill: #94A3B8;
+        letter-spacing: 0.6px;
       }
-      .wave-fast {
-        animation: driftRight 9s linear infinite;
-      }
+      .wave-slow { animation: driftLeft 12s linear infinite; }
+      .wave-fast { animation: driftRight 9s linear infinite; }
       @keyframes driftLeft {
         0% { transform: translateX(0px); }
         100% { transform: translateX(-600px); }
@@ -43,17 +50,24 @@
     </style>
   </defs>
 
-  <g clip-path="url(#footerClip)" mask="url(#edgeFade)">
-    <!-- Back Wave (Exact 600px Period) -->
-    <g class="wave-slow">
-      <path d="M 0 34 Q 150 14, 300 34 T 600 34 T 900 34 T 1200 34 T 1500 34 T 1800 34 L 1800 72 L 0 72 Z" fill="url(#waveFill2)"/>
-      <path d="M 0 34 Q 150 14, 300 34 T 600 34 T 900 34 T 1200 34 T 1500 34 T 1800 34" fill="none" stroke="#818CF8" stroke-opacity="0.55" stroke-width="1.5"/>
-    </g>
+  <g clip-path="url(#footerClip)">
+    <rect width="1200" height="94" fill="url(#footerBg)"/>
 
-    <!-- Front Wave (Exact 600px Period) -->
-    <g class="wave-fast">
-      <path d="M 0 42 Q 150 22, 300 42 T 600 42 T 900 42 T 1200 42 T 1500 42 T 1800 42 L 1800 72 L 0 72 Z" fill="url(#waveFill1)"/>
-      <path d="M 0 42 Q 150 22, 300 42 T 600 42 T 900 42 T 1200 42 T 1500 42 T 1800 42" fill="none" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1.8"/>
+    <!-- Centered Minimal Signature -->
+    <text x="600" y="34" text-anchor="middle" class="sig">FATIH TUNÇEL  ·  AI &amp; DEEP LEARNING RESEARCHER  ·  fatih1975eses@gmail.com</text>
+
+    <!-- Animated Glowing Dual Waves -->
+    <g mask="url(#edgeFade)">
+      <g class="wave-slow">
+        <path d="M 0 58 Q 150 40, 300 58 T 600 58 T 900 58 T 1200 58 T 1500 58 T 1800 58 L 1800 94 L 0 94 Z" fill="url(#waveFill2)"/>
+        <path d="M 0 58 Q 150 40, 300 58 T 600 58 T 900 58 T 1200 58 T 1500 58 T 1800 58" fill="none" stroke="#818CF8" stroke-opacity="0.55" stroke-width="1.5"/>
+      </g>
+      <g class="wave-fast">
+        <path d="M 0 66 Q 150 48, 300 66 T 600 66 T 900 66 T 1200 66 T 1500 66 T 1800 66 L 1800 94 L 0 94 Z" fill="url(#waveFill1)"/>
+        <path d="M 0 66 Q 150 48, 300 66 T 600 66 T 900 66 T 1200 66 T 1500 66 T 1800 66" fill="none" stroke="#38BDF8" stroke-opacity="0.72" stroke-width="1.8"/>
+      </g>
     </g>
   </g>
+
+  <rect x="0.75" y="0.75" width="1198.5" height="92.5" rx="16" fill="none" stroke="#1E293B" stroke-width="1.5"/>
 </svg>

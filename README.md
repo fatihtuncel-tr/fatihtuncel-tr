@@ -1,15 +1,9 @@
 <div align="center">
 
-  <!-- Animated Hero Banner -->
+  <!-- Animated Hero Banner (with Built-In Focus Ticker, Neural Swarm & Live ECG) -->
   <img src="./assets/hero-banner.svg" alt="Fatih Tunçel — Computer & Software Engineering · Deep Learning Researcher" width="100%" />
 
-  <!-- Animated Typing Tagline (Adaptive Dark / Light Theme) -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1500&color=38BDF8&center=true&vCenter=true&width=620&height=34&lines=Biomedical+AI+%C2%B7+Reduced-Lead+ECG+(PTB-XL);Trustworthy+AI+%C2%B7+Calibration+%26+Fairness;Autonomous+Multi-Agent+Swarm+(SWARM-1000)" />
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1500&color=0284C7&center=true&vCenter=true&width=620&height=34&lines=Biomedical+AI+%C2%B7+Reduced-Lead+ECG+(PTB-XL);Trustworthy+AI+%C2%B7+Calibration+%26+Fairness;Autonomous+Multi-Agent+Swarm+(SWARM-1000)" alt="Research Focus" />
-  </picture>
-
-  <!-- Live Visitor Counter & Unified Quick Links -->
+  <!-- Live Visitor Counter & Unified Dark Action Strip -->
   <p>
     <img src="https://hits.sh/github.com/fatihtuncel-tr.svg?style=for-the-badge&label=PROFILE%20VIEWS&color=0284c7&labelColor=0f172a" alt="Profile Views" />
     &nbsp;
@@ -22,65 +16,38 @@
     </a>
   </p>
 
-</div>
+  <!-- 01 // About (Unified Dark Obsidian Panel) -->
+  <img src="./assets/about-panel.svg" alt="About Fatih Tunçel" width="100%" />
 
----
+  <details>
+    <summary>🇹🇷 Türkçe Özet</summary>
+    <br />
+    <img src="./assets/about-tr.svg" alt="Hakkımda — Türkçe Özet" width="100%" />
+  </details>
 
-### About
+  <!-- 02 // Verified Benchmarks (Unified Dark Container) -->
+  <p>
+    <img src="./assets/metrics-strip.svg" alt="Verified Research & Engineering Benchmarks" width="100%" />
+  </p>
 
-Computer & Software Engineering specialist and **AI / Deep Learning Researcher** building trustworthy clinical AI and autonomous multi-agent systems:
+  <!-- 03 // Featured Projects (Side-by-Side Clickable Animated Cards) -->
+  <p>
+    <a href="https://github.com/fatihtuncel-tr/design-project">
+      <img src="./assets/project-ecg.svg" width="49%" alt="design-project — Reduced-Lead ECG Uncertainty Calibration & Fairness" />
+    </a>
+    <a href="https://github.com/fatihtuncel-tr/swarm-1000-code-perfectizer">
+      <img src="./assets/project-swarm.svg" width="49%" alt="swarm-1000-code-perfectizer — 1,000 AI-Agent Code Auditor" />
+    </a>
+  </p>
 
-- **Biomedical AI & Signal Processing** — 1D Convolutional & Residual architectures (`xResNet1d-101`, `SimpleCNN1D`) for reduced-lead ECG classification on **PTB-XL**.
-- **Trustworthy AI & Fairness** — Predictive uncertainty calibration (`ECE`, `Brier Score`, `MC Dropout`) and demographic fairness evaluation across age cohorts (`ΔECE`).
-- **Multi-Agent Swarm Systems** — Coordinated autonomous agent architectures (**SWARM-1000**) for cross-code auditing, self-healing debugging, and live neural mesh visualization.
+  <!-- 04 // Core Tech Stack (Unified Dark Bento Dock) -->
+  <p>
+    <img src="./assets/tech-stack.svg" alt="Core Tech Stack" width="100%" />
+  </p>
 
-<details>
-<summary>🇹🇷 Türkçe Özet</summary>
-
-<br />
-
-**Bilgisayar ve Yazılım Mühendisliği** alanında çalışan bir **Yapay Zeka ve Derin Öğrenme Araştırmacısıyım**:
-
-- **Biyomedikal Yapay Zeka & Sinyal İşleme** — **PTB-XL** klinik EKG veri seti üzerinde derivasyon sayısı azaltılmış sınıflandırma için 1B derin ağ mimarileri (`xResNet1d-101`, `SimpleCNN1D`).
-- **Güvenilir Yapay Zeka & Adalet** — `ECE`, `Brier Skoru` ve `MC Dropout` ile belirsizlik kalibrasyonu; yaş grupları arası algoritmik adalet (`ΔECE`) doğrulaması.
-- **Çoklu Ajan Sistemleri** — Çapraz kod denetimi, otonom hata ayıklama ve gerçek zamanlı sinir ağı görselleştirmesi için **SWARM-1000** çoklu ajan mimarisi.
-
-</details>
-
----
-
-### Highlights
-
-<div align="center">
-  <img src="./assets/metrics-strip.svg" alt="Verified Research & Engineering Metrics" width="100%" />
-</div>
-
----
-
-### Featured Projects
-
-<div align="center">
-  <a href="https://github.com/fatihtuncel-tr/design-project">
-    <img src="./assets/project-ecg.svg" width="48.8%" alt="design-project — Reduced-Lead ECG Uncertainty Calibration & Fairness" />
+  <!-- Animated Dark Obsidian Footer Wave -->
+  <a href="mailto:fatih1975eses@gmail.com">
+    <img src="./assets/footer-wave.svg" alt="Fatih Tunçel — Contact" width="100%" />
   </a>
-  <a href="https://github.com/fatihtuncel-tr/swarm-1000-code-perfectizer">
-    <img src="./assets/project-swarm.svg" width="48.8%" alt="swarm-1000-code-perfectizer — 1,000 AI-Agent Code Auditor" />
-  </a>
-</div>
 
----
-
-### Tech Stack
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,pytorch,scikitlearn,js,html,css,git,github,linux,vscode&theme=dark&perline=10" />
-    <img src="https://skillicons.dev/icons?i=python,pytorch,scikitlearn,js,html,css,git,github,linux,vscode&theme=light&perline=10" alt="Core Tech Stack" />
-  </picture>
-</div>
-
-<br />
-
-<div align="center">
-  <img src="./assets/footer-wave.svg" alt="Animated Wave Footer" width="100%" />
 </div>

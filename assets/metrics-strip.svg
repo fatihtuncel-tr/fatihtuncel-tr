@@ -1,8 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 132" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 176" width="100%" height="100%">
   <defs>
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B1120"/>
-      <stop offset="100%" stop-color="#0F172A"/>
+    <linearGradient id="outerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C18"/>
+      <stop offset="100%" stop-color="#0B1120"/>
+    </linearGradient>
+
+    <linearGradient id="tileBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#111C33"/>
     </linearGradient>
 
     <linearGradient id="sweepCyan" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -37,86 +42,110 @@
       <animate attributeName="x2" values="0%;200%" dur="4.5s" begin="2.4s" repeatCount="indefinite"/>
     </linearGradient>
 
-    <clipPath id="clipCard"><rect width="286" height="126" rx="14"/></clipPath>
+    <clipPath id="clipOuter"><rect width="1200" height="176" rx="16"/></clipPath>
+    <clipPath id="clipTile"><rect width="273" height="106" rx="12"/></clipPath>
 
     <style>
+      .eyebrow {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #38BDF8;
+        letter-spacing: 1.8px;
+      }
+      .eyebrow-r {
+        font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+        font-size: 10.5px;
+        fill: #475569;
+        letter-spacing: 1.4px;
+      }
       .val {
         font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
-        font-size: 30px;
+        font-size: 28px;
         font-weight: 800;
         letter-spacing: -0.5px;
       }
       .lbl {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        font-size: 13.5px;
+        font-size: 13px;
         font-weight: 600;
         fill: #E2E8F0;
       }
       .sub {
         font-family: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
-        font-size: 11px;
+        font-size: 10.5px;
         fill: #64748B;
       }
     </style>
   </defs>
 
-  <!-- Card 1: AUROC -->
-  <g transform="translate(1, 3)">
-    <g clip-path="url(#clipCard)">
-      <rect width="286" height="126" fill="url(#cardBg)"/>
-      <rect x="0" y="0" width="286" height="2.5" fill="url(#sweepCyan)"/>
+  <g clip-path="url(#clipOuter)">
+    <rect width="1200" height="176" fill="url(#outerBg)"/>
+
+    <!-- Header -->
+    <text x="30" y="32" class="eyebrow">02 // VERIFIED BENCHMARKS</text>
+    <text x="1170" y="32" text-anchor="end" class="eyebrow-r">QUANTITATIVE HIGHLIGHTS</text>
+
+    <!-- Card 1: AUROC -->
+    <g transform="translate(30, 48)">
+      <g clip-path="url(#clipTile)">
+        <rect width="273" height="106" fill="url(#tileBg)"/>
+        <rect x="0" y="0" width="273" height="2.5" fill="url(#sweepCyan)"/>
+      </g>
+      <rect x="0.75" y="0.75" width="271.5" height="104.5" rx="12" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+      <circle cx="251" cy="22" r="3.2" fill="#38BDF8">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="45" class="val" fill="#38BDF8">0.9256</text>
+      <text x="20" y="70" class="lbl">Macro AUROC</text>
+      <text x="20" y="90" class="sub">xResNet1d-101 · PTB-XL</text>
     </g>
-    <rect x="0.75" y="0.75" width="284.5" height="124.5" rx="14" fill="none" stroke="#1E293B" stroke-width="1.5"/>
-    <circle cx="262" cy="24" r="3.5" fill="#38BDF8">
-      <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="52" class="val" fill="#38BDF8">0.9256</text>
-    <text x="22" y="80" class="lbl">Macro AUROC</text>
-    <text x="22" y="102" class="sub">xResNet1d-101 · PTB-XL</text>
+
+    <!-- Card 2: Speedup -->
+    <g transform="translate(319, 48)">
+      <g clip-path="url(#clipTile)">
+        <rect width="273" height="106" fill="url(#tileBg)"/>
+        <rect x="0" y="0" width="273" height="2.5" fill="url(#sweepIndigo)"/>
+      </g>
+      <rect x="0.75" y="0.75" width="271.5" height="104.5" rx="12" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+      <circle cx="251" cy="22" r="3.2" fill="#818CF8">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="0.7s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="45" class="val" fill="#818CF8">121.6×</text>
+      <text x="20" y="70" class="lbl">I/O Pipeline Speedup</text>
+      <text x="20" y="90" class="sub">Fold 1–8 NPZ Signal Cache</text>
+    </g>
+
+    <!-- Card 3: Swarm -->
+    <g transform="translate(608, 48)">
+      <g clip-path="url(#clipTile)">
+        <rect width="273" height="106" fill="url(#tileBg)"/>
+        <rect x="0" y="0" width="273" height="2.5" fill="url(#sweepPurple)"/>
+      </g>
+      <rect x="0.75" y="0.75" width="271.5" height="104.5" rx="12" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+      <circle cx="251" cy="22" r="3.2" fill="#C084FC">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="1.4s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="45" class="val" fill="#C084FC">1,000</text>
+      <text x="20" y="70" class="lbl">Autonomous Agents</text>
+      <text x="20" y="90" class="sub">SWARM-1000 Neural Mesh</text>
+    </g>
+
+    <!-- Card 4: Zero Leakage -->
+    <g transform="translate(897, 48)">
+      <g clip-path="url(#clipTile)">
+        <rect width="273" height="106" fill="url(#tileBg)"/>
+        <rect x="0" y="0" width="273" height="2.5" fill="url(#sweepEmerald)"/>
+      </g>
+      <rect x="0.75" y="0.75" width="271.5" height="104.5" rx="12" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+      <circle cx="251" cy="22" r="3.2" fill="#34D399">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="2.1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="45" class="val" fill="#34D399">18,869</text>
+      <text x="20" y="70" class="lbl">Patients Verified</text>
+      <text x="20" y="90" class="sub">Zero-Leakage · Bootstrap CI</text>
+    </g>
   </g>
 
-  <!-- Card 2: Speedup -->
-  <g transform="translate(305, 3)">
-    <g clip-path="url(#clipCard)">
-      <rect width="286" height="126" fill="url(#cardBg)"/>
-      <rect x="0" y="0" width="286" height="2.5" fill="url(#sweepIndigo)"/>
-    </g>
-    <rect x="0.75" y="0.75" width="284.5" height="124.5" rx="14" fill="none" stroke="#1E293B" stroke-width="1.5"/>
-    <circle cx="262" cy="24" r="3.5" fill="#818CF8">
-      <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="0.7s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="52" class="val" fill="#818CF8">121.6×</text>
-    <text x="22" y="80" class="lbl">I/O Pipeline Speedup</text>
-    <text x="22" y="102" class="sub">Fold 1–8 NPZ Signal Cache</text>
-  </g>
-
-  <!-- Card 3: Swarm -->
-  <g transform="translate(609, 3)">
-    <g clip-path="url(#clipCard)">
-      <rect width="286" height="126" fill="url(#cardBg)"/>
-      <rect x="0" y="0" width="286" height="2.5" fill="url(#sweepPurple)"/>
-    </g>
-    <rect x="0.75" y="0.75" width="284.5" height="124.5" rx="14" fill="none" stroke="#1E293B" stroke-width="1.5"/>
-    <circle cx="262" cy="24" r="3.5" fill="#C084FC">
-      <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="1.4s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="52" class="val" fill="#C084FC">1,000</text>
-    <text x="22" y="80" class="lbl">Autonomous Agents</text>
-    <text x="22" y="102" class="sub">SWARM-1000 Neural Mesh</text>
-  </g>
-
-  <!-- Card 4: Zero Leakage -->
-  <g transform="translate(913, 3)">
-    <g clip-path="url(#clipCard)">
-      <rect width="286" height="126" fill="url(#cardBg)"/>
-      <rect x="0" y="0" width="286" height="2.5" fill="url(#sweepEmerald)"/>
-    </g>
-    <rect x="0.75" y="0.75" width="284.5" height="124.5" rx="14" fill="none" stroke="#1E293B" stroke-width="1.5"/>
-    <circle cx="262" cy="24" r="3.5" fill="#34D399">
-      <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="2.1s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="52" class="val" fill="#34D399">18,869</text>
-    <text x="22" y="80" class="lbl">Patients Verified</text>
-    <text x="22" y="102" class="sub">Zero-Leakage · Bootstrap CI</text>
-  </g>
+  <rect x="0.75" y="0.75" width="1198.5" height="174.5" rx="16" fill="none" stroke="#1E293B" stroke-width="1.5"/>
 </svg>
